@@ -1,0 +1,12 @@
+{
+  "name": "maze-gen-demo",
+  "version": "1.0.0",
+  "description": "demo for Maze Generator",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
