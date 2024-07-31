@@ -1,2 +1,5 @@
-# maze-gen-demo
-demo for Maze Generator
+### Run
+```
+> npm install
+> npm run dev
+```
