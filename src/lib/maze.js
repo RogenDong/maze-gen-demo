@@ -54,7 +54,7 @@ export class Maze {
             const ls_nearby = this.nearby_ukn(cur_coor);
             let ri = rand_one(ls_nearby.length);
             // 若无无法前进，尝试回到上一个转角
-            if (ri == -1) {
+            if (ri < 0) {
                 // 转角队列已清空，结束
                 if (corners.length == 0) return;
                 cur_coor = corners.pop();
@@ -84,8 +84,7 @@ export class Maze {
 
         this.map[fy][fx] = fs | dd;
         this.map[dy][dx] = ds | rev(dd);
-
-        console.log(`fs: ${fs}->${this.map[fy][fx]}\nds: ${ds}->${this.map[dy][dx]}`);
+        // console.log(`fs: ${fs}->${this.map[fy][fx]}\nds: ${ds}->${this.map[dy][dx]}`);
     }
 
     nearby_ukn([x, y]) {
@@ -111,7 +110,6 @@ function rand(min, max) {
 }
 
 function rand_one(len) {
-    if (len == 0) return -1;
-    if (len == 1) return 0;
+    if (len <= 1) return len - 1;
     return rand(0, len);
 }
